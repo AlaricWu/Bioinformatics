@@ -5,20 +5,18 @@ function [score,number_of_op_solu,op_align] = local_alignment(sequence1,sequence
     global max_score
     global index_i
     global index_j
-    index_i = 1
-    index_j = 1
-    max_score = 0
+    index_i = 1;
+    index_j = 1;
+    max_score = 0;
     J = length(sequence1) + 1;
     I = length(sequence2) + 1;
     score = D_l(I,J,sequence1,sequence2, score_m, score_s, score_d);
     table_m
-    score = max_score
-    [index_i,index_j]
+    score = max_score;
     global path_list
     path_list = [];
     find_Path_l(index_i,index_j,[],sequence1,sequence2, score_m, score_s, score_d);
-    path_list
-    number_of_op_solu = length(path_list);
+    number_of_op_solu = length(path_list)
     for i = 1: number_of_op_solu
         [ali1,ali2] = trace_opt_ali('l',path_list{i},sequence1,sequence2)
     end
