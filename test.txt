@@ -1,0 +1,30 @@
+AGTAATCGA
+TGATTCGA
+
+ali1 =
+
+    'AGTAATCGA'
+
+
+ali2 =
+
+    'TG ATTCGA'
+
+ali1 =
+
+    ' CGA'
+
+
+ali2 =
+
+    ' CGA'
+
+
+ali1 =
+
+    ' T CGA'
+
+
+ali2 =
+
+    ' TTCGA'
