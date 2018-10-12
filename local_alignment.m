@@ -13,14 +13,16 @@ function [score,number_of_op_solu,op_align] = local_alignment(sequence1,sequence
     score = D_l(I,J,sequence1,sequence2, score_m, score_s, score_d);
     table_m
     score = max_score;
+    optimal_score = score
     global path_list
     path_list = [];
     find_Path_l(index_i,index_j,[],sequence1,sequence2, score_m, score_s, score_d);
-    number_of_op_solu = length(path_list)
+    number_of_op_solu = length(path_list);
+    fprintf("The number of optimal alignment: %d\n", number_of_op_solu);
     for i = 1: number_of_op_solu
+        fprintf("Optimal Alignment # %d:\n", i);
         [ali1,ali2] = trace_opt_ali('l',path_list{i},sequence1,sequence2)
     end
-    score
 end
 
 function score = D_l(i,j,sequence1,sequence2, score_m, score_s, score_d)

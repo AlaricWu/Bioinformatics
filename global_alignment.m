@@ -18,11 +18,13 @@ function [score,number_of_op_solu,op_align] = global_alignment(sequence1,sequenc
     find_Path(I,J,[],sequence1,sequence2, score_m, score_s, score_d);
     table_m
     optimal_score = score
-    number_of_op_solu = length(path_list); 
-    %number_of_op_solu = table_n(I,J); %they are equivalent, this line is more efficient.
+    number_of_op_solu = length(path_list); % this is the version that calculated after the table is built.
+    %number_of_op_solu = table_n(I,J); %they are equivalent, this line is
+    %more efficient, which calculated the number when building the table.
     fprintf("The number of optimal alignment calculated by recursive search path after the table is built: %d\n", number_of_op_solu);
-    fprintf("The number of optimal alignment calculated by dynamic programming when the table is building: %d\n", table_n(I,J));
+    fprintf("The number of optimal alignment calculated by dynamic programming when the table is building: %d\n\n", table_n(I,J));
     for i = 1: number_of_op_solu
+        fprintf("Optimal Alignment # %d:\n", i);
         [ali1,ali2] = trace_opt_ali('g',path_list{i},sequence1,sequence2)
     end
     
